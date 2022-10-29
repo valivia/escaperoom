@@ -1,0 +1,12 @@
+.frame object{
+    background-size: cover;
+    width: 100%;
+}
+
+.dark {
+    opacity: 10%;
+}
+
+.clickable {
+    cursor: pointer;
+}
