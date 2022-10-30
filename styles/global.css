@@ -1,6 +1,10 @@
 @import "../styles/basic-components/all.css";
 /*import custom styles here*/
 
+@font-face {
+    font-family: heebo;
+    src: url("/assets/heebo.ttf");
+}
 
 * {
     box-sizing: border-box;
@@ -8,7 +12,7 @@
     margin: 0;
 }
 
-:root{
+:root {
     /* Color styles */
     --font: rgba(181, 166, 145, 1);
     --font_active: rgba(209, 201, 189, 1);
@@ -16,7 +20,8 @@
     --secondary: rgba(19, 19, 19, 1);
 }
 
-html, body {
+html,
+body {
     background: var(--primary);
     display: flex;
     justify-content: center;
@@ -24,7 +29,12 @@ html, body {
     color: var(--font_active);
 }
 
-.wrapper{
+* {
+    font-family: heebo, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+}
+
+.wrapper {
     background: var(--secondary);
     width: 100vw;
     border: 1px solid red;
@@ -37,7 +47,3 @@ html, body {
         max-width: 1000px;
     }
 }
-
-
-
-
