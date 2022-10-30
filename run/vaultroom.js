@@ -8,7 +8,7 @@ import { getButtonGoBack } from "../components/button.js";
 const header = getHeader('Maybe something is hidden here?', "Mysterious room")
 
 // frame
-const frame = getFrame('assets/frames/vaultroom/main.svg');
+const frame = getFrame('assets/frames/vaultroom/room.svg');
 
 // inventory
 const inventory = getInventory();
@@ -47,7 +47,7 @@ const assignClickAbles = () => {
 
         // Vault
         const vault = svg.querySelector("#vault");
-        vault.addEventListener("click", () => alert("a"));
+        vault.addEventListener("click", () => window.location = "/vault.html");
     });
 }
 
