@@ -1,5 +1,5 @@
-import {getButtonWithIcon, getButtonWithText} from "./button.js";
-import {showPopup} from "./popup.js";
+import { getButtonWithIcon, getButtonWithText } from "./button.js";
+import { showPopup } from "./popup.js";
 
 const section = document.createElement('section');
 section.classList.add('inventory')
@@ -17,7 +17,7 @@ const generateCurrentInventoryItems = () => {
                 handler: () => alert(localStorage.getItem("key1"))
             }
         )
-    } else {inventory.push({key: null})}
+    } else { inventory.push({ key: null }) }
     if (localStorage.getItem("key2")) {
         inventory.push(
             {
@@ -26,7 +26,7 @@ const generateCurrentInventoryItems = () => {
                 handler: () => alert(localStorage.getItem("key2"))
             }
         )
-    }  else {inventory.push({key: null})}
+    } else { inventory.push({ key: null }) }
 
     console.log(inventory)
 
@@ -36,9 +36,9 @@ const generateCurrentInventoryItems = () => {
 const getInventory = () => {
     const currentInventoryItems = generateCurrentInventoryItems()
     currentInventoryItems.map((item) => {
-        item.key ? section.appendChild(getButtonWithIcon(item.iconUrl, item.handler)) : section.appendChild(getButtonWithText('X', () => showPopup('Something went wrong', "You don't have this inventory item available", true)))
+        item.key ? section.appendChild(getButtonWithIcon(item.iconUrl, item.handler)) : section.appendChild(getButtonWithText("&#x2715;", () => showPopup('Something went wrong', "You don't have this inventory item available", true)))
     })
     return section;
 }
 
-export {getInventory};
+export { getInventory };

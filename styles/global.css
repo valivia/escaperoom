@@ -30,10 +30,6 @@ html, body {
     border: 1px solid red;
 }
 
-button:hover {
-    scale: 1.1;
-}
-
 /*desktop*/
 @media only screen and (min-width: 641px) {
     .wrapper {
