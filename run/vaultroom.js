@@ -5,7 +5,7 @@ import { getButtonGoBack } from "../components/button.js";
 
 // create every component
 // header
-const header = getHeader('Maybe something is hidden here?', "Mysterious room")
+const header = getHeader('Starry night is my favourite painting!', "Mysterious room")
 
 // frame
 const frame = getFrame('assets/frames/vaultroom/room.svg');

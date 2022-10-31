@@ -5,28 +5,20 @@ const section = document.createElement('section');
 section.classList.add('inventory')
 
 const generateCurrentInventoryItems = () => {
-    const inventory = []
+    const inventory = [
+        {
+            key: localStorage.getItem("key1"),
+            iconUrl: `/assets/icons/items/letter.svg`,
+            handler: () => getInventoryItem('assets/frames/inventory/letter.png', section)
+        },
+        {
+            key: localStorage.getItem("key2"),
+            iconUrl: `/assets/icons/items/secrets.svg`,
+            handler: () => getInventoryItem('assets/frames/inventory/TODO.png', section)
+        }
+    ]
 
     // You can change the key and the property value to your likings
-
-    if (localStorage.getItem("key1")) {
-        inventory.push(
-            {
-                key: localStorage.getItem("key1"),
-                iconUrl: ``,
-                handler: () => alert(localStorage.getItem("key1"))
-            }
-        )
-    } else { inventory.push({ key: null }) }
-    if (localStorage.getItem("key2")) {
-        inventory.push(
-            {
-                key: localStorage.getItem("key2"),
-                iconUrl: ``,
-                handler: () => alert(localStorage.getItem("key2"))
-            }
-        )
-    } else { inventory.push({ key: null }) }
 
     console.log(inventory)
 
