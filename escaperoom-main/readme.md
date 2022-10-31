@@ -1,2 +1,0 @@
-### Exporting frame from figma
-
