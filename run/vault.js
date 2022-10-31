@@ -85,14 +85,16 @@ const assignClickAbles = () => {
         svg.style.width = '100%'
         svg.style.height = '100%'
 
-
-
         const knob1 = svg.querySelector("#knob1");
         const knob2 = svg.querySelector("#knob2");
         const knob3 = svg.querySelector("#knob3");
         const confirmButton = svg.querySelector("#confirm");
 
-        if (localStorage.getItem("key2") !== null) return hideButtons();
+        if (localStorage.getItem("key2") !== null) { 
+            hideButtons();
+            showPopup("Hurry up!", "I already have the secrets, I need to quickly get out!!")
+            return;
+        }
 
         const transformBox = "fill-box"
 
