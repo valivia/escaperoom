@@ -100,16 +100,19 @@ const assignClickAbles = () => {
 
         knob1.style.transformOrigin = "center"
         knob1.style.transformBox = transformBox;
+        knob1.style.transition = "transform 200ms ease-in-out"
         knob1.style.transform = rotation(0);
         knob1.addEventListener("click", () => onKnobClick("knob1"))
 
         knob2.style.transformOrigin = "center"
         knob2.style.transformBox = transformBox;
+        knob2.style.transition = "transform 200ms ease-in-out"
         knob2.style.transform = rotation(120);
         knob2.addEventListener("click", () => onKnobClick("knob2"))
 
         knob3.style.transformOrigin = "center"
         knob3.style.transformBox = transformBox;
+        knob3.style.transition = "transform 200ms ease-in-out"
         knob3.style.transform = rotation(240);
         knob3.addEventListener("click", () => onKnobClick("knob3"))
 

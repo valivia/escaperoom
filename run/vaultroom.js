@@ -41,6 +41,7 @@ const assignClickAbles = () => {
         // Painting
         const painting = svg.querySelector("#painting");
         painting.addEventListener("click", removePainting);
+        painting.style.transition = "transform 500ms ease-in-out"
 
         if (localStorage.getItem("paintingRemoved") === "true")
             painting.style.transform = "translate(100px, 100px) skew(-10deg, 10deg) scale(0.9)";
