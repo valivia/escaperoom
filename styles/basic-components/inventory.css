@@ -1,6 +1,23 @@
 .inventory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inventory-items {
     display: flex;
     width: 100%;
     justify-content: space-around;
     padding: 1rem 0;
+}
+
+.inventory-image {
+    width: 100%;
+    height: auto;
+}
+
+.inventory-item {
+    border: 3px solid var(--font);
+    padding: 1rem;
+    display: none;
 }
