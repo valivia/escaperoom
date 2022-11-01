@@ -1,6 +1,7 @@
 main{
     max-height: 100vh;
     width: 100vw;
+    padding: 1rem;
 }
 
 figure{
@@ -9,8 +10,8 @@ figure{
 }
 
 img{
-    max-height: 90vh;
-    max-width: 90vh;
+    height: 800px;
+    width: 600px;
     object-fit: contain;
 }
 
@@ -42,10 +43,20 @@ button:hover{
     cursor: pointer;
 }
 
+@media only screen and (max-width: 613px){
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
 @media only screen and (min-width: 614px){
     main{
         max-width: 60vw;
+    }
+    img {
+        width: 100%;
+        height: auto;
     }
 }
 
