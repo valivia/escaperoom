@@ -15,12 +15,12 @@ const assignClickAbles = () =>{
         const svg = document.querySelector("object").contentDocument.getElementsByTagName('svg')[0]
         svg.style.width = '100%'
         svg.style.height = '100%'
-            svg.querySelector('#lockbutton').addEventListener("click", () => makeDraggable(evt))
+            svg.querySelector('#lockbutton').addEventListener("click", () => alert("check lockpos"))
             svg.querySelector('#lockpick').addEventListener("click", () => alert("move pick"))
     });
 }
 
-function makeDraggable(evt){
+/*function makeDraggable(evt){
     var svg = evt.target;
     svg.addEventListener('mousedown', startDrag);
     svg.addEventListener('mousemove', drag);
@@ -47,7 +47,9 @@ function makeDraggable(evt){
     function endDrag(evt){
         selectedElement = null;
     }
-}
+}*/
+
+
 const wrapper = document.querySelector('.wrapper');
 
 export const introGame = () => {

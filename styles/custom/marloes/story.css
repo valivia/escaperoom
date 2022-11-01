@@ -1,0 +1,56 @@
+main{
+    max-height: 100vh;
+    width: 100vw;
+}
+
+figure{
+    margin: auto;
+    width: fit-content;
+}
+
+img{
+    max-height: 90vh;
+    max-width: 90vh;
+    object-fit: contain;
+}
+
+p{
+    padding: 70px 0;
+    text-align: center;
+}
+
+button{
+    display: block;
+    color: var(--font);
+    background-color: var(--primary);
+    padding: 12px 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: 1px solid var(--font_active);
+    border-radius: 8px;
+    box-shadow:1px 1px var(--font),
+               2px 2px var(--font);
+}
+
+button:hover{
+    color: var(--primary);
+    background-color: var(--font);
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 614px){
+    main{
+        max-width: 60vw;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    main{
+        max-width: 40vw;
+    }
+}
