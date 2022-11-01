@@ -36,7 +36,7 @@ const checkCombination = () => {
         solutions[currentSolution][1] !== getKnobDeg(knob2) ||
         solutions[currentSolution][2] !== getKnobDeg(knob3)
     ) {
-        showPopup("Incorrect", "Hmmm it doesnt move");
+        showPopup("Incorrect", "Hmmm it doesnt budge");
         return;
     }
 
@@ -76,6 +76,17 @@ const onKnobClick = (id) => {
     knob.style.transform = rotation((oldDeg + 120) % 360);
 }
 
+const configureKnob = (id, deg) => {
+    const svg = document.querySelector("object").contentDocument.getElementsByTagName('svg')[0]
+    const knob = svg.querySelector(`#${id}`);
+
+    knob.style.transformOrigin = "center"
+    knob.style.transformBox = "fill-box"
+    knob.style.transition = "transform 200ms ease-in-out"
+    knob.style.transform = rotation(deg);
+    knob.style.cursor = 'pointer'
+    knob.addEventListener("click", () => onKnobClick(id))
+}
 
 const assignClickAbles = () => {
     document.querySelector("object").addEventListener("load", () => {
@@ -85,37 +96,18 @@ const assignClickAbles = () => {
         svg.style.width = '100%'
         svg.style.height = '100%'
 
-        const knob1 = svg.querySelector("#knob1");
-        const knob2 = svg.querySelector("#knob2");
-        const knob3 = svg.querySelector("#knob3");
-        const confirmButton = svg.querySelector("#confirm");
-
         if (localStorage.getItem("key2") !== null) {
             hideButtons();
             showPopup("Hurry up!", "I already have the secrets, I need to quickly get out!!")
             return;
         }
 
-        const transformBox = "fill-box"
+        configureKnob("knob1", 0);
+        configureKnob("knob2", 120);
+        configureKnob("knob3", 240);
 
-        knob1.style.transformOrigin = "center"
-        knob1.style.transformBox = transformBox;
-        knob1.style.transition = "transform 200ms ease-in-out"
-        knob1.style.transform = rotation(0);
-        knob1.addEventListener("click", () => onKnobClick("knob1"))
-
-        knob2.style.transformOrigin = "center"
-        knob2.style.transformBox = transformBox;
-        knob2.style.transition = "transform 200ms ease-in-out"
-        knob2.style.transform = rotation(120);
-        knob2.addEventListener("click", () => onKnobClick("knob2"))
-
-        knob3.style.transformOrigin = "center"
-        knob3.style.transformBox = transformBox;
-        knob3.style.transition = "transform 200ms ease-in-out"
-        knob3.style.transform = rotation(240);
-        knob3.addEventListener("click", () => onKnobClick("knob3"))
-
+        const confirmButton = svg.querySelector("#confirm");
+        confirmButton.style.cursor = 'pointer'
         confirmButton.addEventListener("click", () => checkCombination())
 
     });
