@@ -1,7 +1,7 @@
-import { getHeader, updateStatusHeader } from "../components/header.js";
-import { getFrame } from "../components/frame.js";
-import { getInventory } from "../components/inventory.js";
-import { getButtonGoBack } from "../components/button.js";
+import { getHeader, updateStatusHeader } from "../../components/header.js";
+import { getFrame } from "../../components/frame.js";
+import { getInventory } from "../../components/inventory.js";
+import { getButtonGoBack } from "../../components/button.js";
 import { showPopup } from "../../components/popup.js";
 
 // create every component
@@ -15,7 +15,7 @@ const frame = getFrame('assets/frames/vaultroom/vault.svg');
 const inventory = getInventory();
 
 // back button
-const backButton = getButtonGoBack('Go back to the mysterious room', '/vaultroom.html')
+const backButton = getButtonGoBack('Go back to the mysterious room', '/mysterious_room.html')
 
 const solutions = [[240, 120, 120], [0, 240, 0], [0, 240, 240]];
 let currentSolution = 0;

@@ -17,7 +17,7 @@ const frame = getFrame('assets/frames/room1/frame.svg');
 const inventory = getInventory();
 
 // back button
-const backButton = getButtonGoBack('Back to the hallway', '/escape room/hallway.html')
+const backButton = getButtonGoBack('Back to the hallway', '/hallway.html')
 
 const lightSwitch = () => {
     if (frame.classList.contains('dark')) {
