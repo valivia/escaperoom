@@ -1,7 +1,7 @@
-import { getHeader, updateStatusHeader } from "../components/header.js";
-import { getFrame } from "../components/frame.js";
-import { getInventory } from "../components/inventory.js";
-import { getButtonGoBack } from "../components/button.js";
+import { getHeader, updateStatusHeader } from "../../components/header.js";
+import { getFrame } from "../../components/frame.js";
+import { getInventory } from "../../components/inventory.js";
+import { getButtonGoBack } from "../../components/button.js";
 
 // create every component
 // header

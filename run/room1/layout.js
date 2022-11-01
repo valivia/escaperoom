@@ -18,6 +18,7 @@ const inventory = getInventory();
 // back button
 const backButton = getButtonGoBack('Back to the hallway', 'hallway.html')
 
+
 const wrapper = document.querySelector('.wrapper')
 
 export const exampleGame = () => {

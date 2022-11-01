@@ -14,7 +14,7 @@ const generateCurrentInventoryItems = () => {
         {
             key: localStorage.getItem("key1"),
             iconUrl: `/assets/icons/items/letter.svg`,
-            handler: () => getInventoryItem('assets/frames/inventory/letter.png', section)
+            handler: () => getInventoryItem('assets/frames/inventory/letter.jpg', section)
         },
         {
             key: localStorage.getItem("key2"),

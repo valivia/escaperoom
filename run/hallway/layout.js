@@ -39,7 +39,7 @@ const assignClickAbles = () => {
         svg.style.height = '100%'
         svg.querySelector("#door1").style.cursor = 'pointer'
         svg.querySelector("#door2").style.cursor = 'pointer'
-        svg.querySelector("#door1").addEventListener("click", () => handleLocation('room2.html'))
+        svg.querySelector("#door1").addEventListener("click", () => handleLocation('mysterious_room.html'))
         svg.querySelector("#door2").addEventListener("click", () => handleLocation('room1.html'))
         svg.querySelector("#light_switch").style.cursor = 'pointer'
         svg.querySelector("#light_switch").addEventListener("click", lightSwitch)
