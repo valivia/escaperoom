@@ -17,6 +17,7 @@ const assignClickAbles = () =>{
         const svg = document.querySelector("object").contentDocument.getElementsByTagName('svg')[0]
         svg.style.width = '100%'
         svg.style.height = '100%'
+        svg.querySelector('#frontdoor').style.cursor = 'pointer';
             svg.querySelector('#frontdoor').addEventListener("click", () => {window.location.href = 'frontdoor.html'
         })
     });

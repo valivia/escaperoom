@@ -11,13 +11,14 @@ const header = getHeader('Click on the selections inside the frame', 'Dark Hallw
 
 // frame
 const frame = getFrame('assets/frames/hallway/dark-hallway.svg');
+{!localStorage.getItem('light') && frame.classList.add('dark')}
 {localStorage.getItem('light') === 'false' && frame.classList.add('dark')}
 
 // inventory
 const inventory = getInventory();
 
 // back button
-const backButton = getButtonGoBack('Terug naar index.html', '/escape room/')
+const backButton = getButtonGoBack('Go back Outside', 'house.html')
 
 const lightSwitch = () => {
     if (frame.classList.contains('dark')) {

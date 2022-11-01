@@ -32,3 +32,11 @@
     align-items: center;
     cursor: pointer;
 }
+
+.back-button:hover p {
+    text-decoration: underline;
+}
+
+.back-button:hover p {
+    text-decoration: underline;
+}

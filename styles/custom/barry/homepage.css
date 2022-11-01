@@ -1,0 +1,52 @@
+body {
+    width: 100vw;
+}
+
+.homepage-wrapper {
+    margin: 1rem;
+    width: 60vw;
+    background-image: url('../../../assets/frames/intro/homepage.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    /*overflow: hidden;*/
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.play-header {
+
+}
+
+.play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    transform: scale(1.3);
+}
+
+.play-button > *{
+    width: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .homepage-wrapper {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+}
