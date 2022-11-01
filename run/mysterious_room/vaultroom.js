@@ -50,7 +50,8 @@ const assignClickAbles = () => {
         // Painting
         const painting = svg.querySelector("#painting");
         painting.addEventListener("click", removePainting);
-        painting.style.transition = "transform 500ms ease-in-out"
+        painting.style.transition = "transform 500ms ease-in-out";
+        painting.style.cursor = 'pointer';
 
         if (localStorage.getItem("paintingRemoved") === "true")
             painting.style.transform = "translate(100px, 100px) skew(-10deg, 10deg) scale(0.9)";
@@ -58,6 +59,7 @@ const assignClickAbles = () => {
         // Vault
         const vault = svg.querySelector("#vault");
         vault.addEventListener("click", clickVault);
+        vault.style.cursor = 'pointer'
 
         playBackgroundMusic("assets/audio/vault/room_ambience.mp3")
     });
