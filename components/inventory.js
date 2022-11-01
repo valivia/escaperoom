@@ -1,8 +1,13 @@
-import { getButtonWithIcon, getButtonWithText } from "./button.js";
-import { showPopup } from "./popup.js";
+import {getButtonWithIcon, getButtonWithText} from "./button.js";
+import {showPopup} from "./popup.js";
+import getInventoryItem from "../handlers/inventoryItem.js";
+
 
 const section = document.createElement('section');
 section.classList.add('inventory')
+
+const itemsSection = document.createElement('section');
+itemsSection.classList.add('inventory-items')
 
 const generateCurrentInventoryItems = () => {
     const inventory = [
@@ -27,9 +32,12 @@ const generateCurrentInventoryItems = () => {
 
 const getInventory = () => {
     const currentInventoryItems = generateCurrentInventoryItems()
+
     currentInventoryItems.map((item) => {
-        item.key ? section.appendChild(getButtonWithIcon(item.iconUrl, item.handler)) : section.appendChild(getButtonWithText("&#x2715;", () => showPopup('Something went wrong', "You don't have this inventory item available", true)))
+        item.key ? itemsSection.appendChild(getButtonWithIcon(item.iconUrl, item.handler)) : itemsSection.appendChild(getButtonWithText('X', () => showPopup('Something went wrong', "You don't have this inventory item available", true)))
+
     })
+    section.appendChild(itemsSection);
     return section;
 }
 
