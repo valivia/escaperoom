@@ -3,6 +3,7 @@ import {getFrame} from "../../components/frame.js";
 import {getInventory} from "../../components/inventory.js";
 import {getButtonGoBack} from "../../components/button.js";
 import handleLocation from "../../handlers/location.js";
+import {playBackgroundMusic} from "../../modules/sound.js";
 
 // create every component
 // header
@@ -57,6 +58,8 @@ export const exampleGame = () => {
     wrapper.appendChild(inventory)
 
     wrapper.appendChild(backButton)
+
+    playBackgroundMusic('assets/audio/hallway/mystery.mp3')
 }
 
 window.onload = exampleGame;
