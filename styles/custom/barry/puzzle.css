@@ -39,6 +39,11 @@
 .puzzle .color-button-column .color-button {
     width: 100%;
     height: 2rem;
+    cursor: pointer;
+}
+
+.puzzle .color-button-column .color-button:hover {
+    transform: scale(1.1);
 }
 
 .puzzle .figure-button-column {
@@ -52,6 +57,11 @@
     padding: 1rem;
     background: none;
     border: none;
+    cursor: pointer;
+}
+
+.puzzle .figure-button-column button:hover {
+    transform: scale(1.1);
 }
 
 .puzzle .controls-wrapper {

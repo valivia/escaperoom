@@ -155,11 +155,13 @@ const appendPuzzleBeforeInventory = (puzzleSection) => {
 
 
 
-const getPuzzle = () => {
+const getPuzzle = (letter) => {
     createOverlay();
     createLayoutPuzzle()
 
     appendPuzzleBeforeInventory(puzzleSection)
+
+    letter.style.pointerEvents = 'none'
 
     assignClickAbles()
 

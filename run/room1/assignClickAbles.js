@@ -15,11 +15,11 @@ const closetDoor = (svg) => {
         } else {
             svg.querySelector("#letter").style.display = 'block'
             showPopup('Found Something!', 'Looks like an old letter. Interesting. ')
-            addClassClickable( svg.querySelector("#closet #letter"));
+            addClassClickable(svg.querySelector("#closet #letter"));
             svg.querySelector("#closet #letter").addEventListener("click", () => {
                 playSound('assets/audio/room1/wrong.mp3');
                 showPopup("I can't read it. WTF", 'There is a lock. I have to unlock a puzzle first')
-                getPuzzle()
+                getPuzzle(svg.querySelector("#closet #letter"))
             })
         }
         });
