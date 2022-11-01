@@ -1,4 +1,4 @@
-import playSound from "../../modules/sound.js";
+import {playSound} from "../../modules/sound.js";
 import {showPopup} from "../../components/popup.js";
 import getPuzzle from "./puzzle/puzzleLayout.js";
 

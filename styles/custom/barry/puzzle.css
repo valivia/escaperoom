@@ -64,6 +64,18 @@
     border: 3px solid var(--font) !important;
 }
 
+@media only screen and (max-width: 600px) {
+    .puzzle {
+        padding: 1rem 1rem;
+    }
+    .figure-column {
+        width: 100%;
+    }
+    .figures {
+        gap: 0.5rem !important;
+    }
+}
+
 
 
 

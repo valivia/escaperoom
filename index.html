@@ -5,12 +5,23 @@
     <link rel="stylesheet" href="styles/global.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>begin example</title>
+    <link rel="stylesheet" href="styles/custom/barry/homepage.css">
+    <title>Save the World</title>
 </head>
 <body>
-
-<a href="hallway.html">Start example</a>
+<main class="homepage-wrapper">
+<!--    <img src="assets/frames/intro/homepage.png" alt="Home" class="background-img"/>-->
+    <section class="start">
+        <h1 class="play-header">Can you save the world?</h1>
+        <button class="play-button" onclick="location.href = 'house.html'">
+            <img src="assets/icons/play.svg" alt="play"/>
+        </button>
+    </section>
+</main>
 
 
 </body>
+<script>
+    localStorage.clear();
+</script>
 </html>

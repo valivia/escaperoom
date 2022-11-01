@@ -37,16 +37,6 @@ const setTimer = () => {
 
 
 const getTimer = (timeBlock) => {
-    // validation parameters
-    checkParams(
-        [
-            {
-                param: timeBlock,
-                dataType: "string"
-            }
-        ]
-    )
-
     setInterval(() => {
         // checking timer if it exceeded its limit (limit = 0)
         checkTimer()
