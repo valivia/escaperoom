@@ -1,4 +1,4 @@
-import { getHeader, updateStatusHeader } from "../../components/header.js";
+import { getHeader } from "../../components/header.js";
 import { getFrame } from "../../components/frame.js";
 import { getInventory } from "../../components/inventory.js";
 import { getButtonGoBack } from "../../components/button.js";
@@ -6,7 +6,7 @@ import { showPopup } from "../../components/popup.js";
 
 // create every component
 // header
-const header = getHeader('Maybe we need some note with the vault combination??', "The Vault")
+const header = getHeader('Maybe the note i found has the vault combination?', "The Vault")
 
 // frame
 const frame = getFrame('assets/frames/vaultroom/vault.svg');
@@ -90,7 +90,7 @@ const assignClickAbles = () => {
         const knob3 = svg.querySelector("#knob3");
         const confirmButton = svg.querySelector("#confirm");
 
-        if (localStorage.getItem("key2") !== null) { 
+        if (localStorage.getItem("key2") !== null) {
             hideButtons();
             showPopup("Hurry up!", "I already have the secrets, I need to quickly get out!!")
             return;

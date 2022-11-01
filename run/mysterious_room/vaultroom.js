@@ -2,6 +2,7 @@ import { getHeader, updateStatusHeader } from "../../components/header.js";
 import { getFrame } from "../../components/frame.js";
 import { getInventory } from "../../components/inventory.js";
 import { getButtonGoBack } from "../../components/button.js";
+import { showPopup } from "../../components/popup.js";
 
 // create every component
 // header
@@ -30,6 +31,11 @@ const removePainting = () => {
     }
 }
 
+const clickVault = () => {
+    if (localStorage.getItem("key1") === null) showPopup("Huh??", "This vault is way too complicated, Maybe i can find the solution somewhere?")
+    else window.location = "/vault.html"
+}
+
 const assignClickAbles = () => {
     document.querySelector("object").addEventListener("load", () => {
 
@@ -48,7 +54,7 @@ const assignClickAbles = () => {
 
         // Vault
         const vault = svg.querySelector("#vault");
-        vault.addEventListener("click", () => window.location = "/vault.html");
+        vault.addEventListener("click", clickVault);
     });
 }
 
