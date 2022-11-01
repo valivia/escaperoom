@@ -27,6 +27,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     color: var(--font_active);
+    width: 100%;
 }
 
 * {
@@ -37,13 +38,28 @@ body {
 .wrapper {
     background: var(--secondary);
     width: 100vw;
-    border: 1px solid red;
 }
 
 /*desktop*/
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 800px) {
+    .wrapper {
+        width: 80vw;
+        max-width: 1000px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
     .wrapper {
         width: 50vw;
         max-width: 1000px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+
+@media only screen and (max-width: 100px) {
+    .wrapper {
+        width: 60vw;
+        max-width: 1000px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 }
