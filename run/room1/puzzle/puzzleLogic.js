@@ -2,11 +2,6 @@ import playSound from "../../../modules/sound.js";
 import {showPopup} from "../../../components/popup.js";
 import {selectedColor, selectedFigure} from "./puzzleLayout.js";
 
-
-const activeColorButton = document.querySelector('.color-button-column .button-active');
-const activeFigureButton = document.querySelector('.figure-button-column .button-active');
-
-
 localStorage.setItem('puzzle-phase', '1');
 
 const puzzleComplete = () => {
@@ -15,7 +10,7 @@ const puzzleComplete = () => {
     puzzleSection.remove();
     localStorage.setItem('key1', 'letter')
     showPopup('An item has been added to your Inventory', 'You can Click on the item to see what we got');
-    location.reload()
+    setInterval(() => location.reload(), 2000);
 }
 
 const removeAllActiveButtons = () => {
@@ -48,7 +43,6 @@ const getPuzzleLogic = (generatedPuzzle, button) => {
         localStorage.setItem('puzzle-phase', (parseInt(localStorage.getItem('puzzle-phase')) + 1).toString())
         figureColumns[localStorage.getItem('puzzle-phase') - 2].style.backgroundColor = 'green'
         playSound('assets/audio/room1/success.wav')
-        console.log('stepped up')
         if (parseInt(localStorage.getItem('puzzle-phase')) === 5){
             puzzleComplete()
         }

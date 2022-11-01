@@ -3,7 +3,8 @@ import {showPopup} from "../../components/popup.js";
 import getPuzzle from "./puzzle/puzzleLayout.js";
 
 const closetDoor = (svg) => {
-    svg.querySelector("#closet #closet_door").addEventListener("click", (e) => {
+    addClassClickable( svg.querySelector("#closet #closet_door"));
+    svg.querySelector("#closet #closet_door").addEventListener("click", () => {
             playSound('assets/audio/room1/old_closet_door.wav');
             const closetDoor = svg.querySelector("#closet #door");
             closetDoor.style.display = 'none';
@@ -14,7 +15,7 @@ const closetDoor = (svg) => {
         } else {
             svg.querySelector("#letter").style.display = 'block'
             showPopup('Found Something!', 'Looks like an old letter. Interesting. ')
-            console.log(svg.querySelector("#letter"))
+            addClassClickable( svg.querySelector("#closet #letter"));
             svg.querySelector("#closet #letter").addEventListener("click", () => {
                 playSound('assets/audio/room1/wrong.mp3');
                 showPopup("I can't read it. WTF", 'There is a lock. I have to unlock a puzzle first')
@@ -25,10 +26,17 @@ const closetDoor = (svg) => {
 }
 
 const painting = (svg) => {
+    addClassClickable(svg.querySelector('#painting'))
     svg.querySelector('#painting').addEventListener('click', () => showPopup("Beautiful Painting. But that's it!", 'Just an ordinary painting....'))
 }
 
 const drawers = (svg) => {
+    // make clickable
+    addClassClickable(svg.querySelector("#table #drawer1"))
+    addClassClickable(svg.querySelector("#table #drawer2"))
+    addClassClickable(svg.querySelector("#table #drawer3"))
+    addClassClickable(svg.querySelector("#table #drawer4"))
+
     svg.querySelector("#table #drawer1").addEventListener("click", () => {
         playSound('assets/audio/room1/drawer.wav');
         showPopup('Nothing Found Unfortunately. Keep Looking!', 'Empty drawer :(')
@@ -46,6 +54,10 @@ const drawers = (svg) => {
         playSound('assets/audio/room1/drawer.wav');
         showPopup('Nope. Nothing Found Unfortunately. Keep Looking!', 'Empty drawer :(')
     })
+}
+
+const addClassClickable = (el) => {
+    el.style.cursor = 'pointer'
 }
 
 export const assignClickAbles = () => {

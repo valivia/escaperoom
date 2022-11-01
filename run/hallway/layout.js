@@ -6,11 +6,11 @@ import handleLocation from "../../handlers/location.js";
 
 // create every component
 // header
-const header = getHeader('Click on the selections inside the frame', 'Example Status')
+const header = getHeader('Click on the selections inside the frame', 'Dark Hallway')
 
 // frame
 const frame = getFrame('assets/frames/hallway/dark-hallway.svg');
-frame.classList.add('dark')
+{localStorage.getItem('light') === 'false' && frame.classList.add('dark')}
 
 // inventory
 const inventory = getInventory();
@@ -20,10 +20,12 @@ const backButton = getButtonGoBack('Terug naar index.html', '/escape room/')
 
 const lightSwitch = () => {
     if (frame.classList.contains('dark')) {
+        localStorage.setItem('light', 'true')
         frame.classList.remove('dark')
         updateStatusHeader('better now')
     } else {
         frame.classList.add('dark')
+        localStorage.setItem('light', 'false')
         updateStatusHeader('mwehh a bit spooky')
     }
 }

@@ -98,7 +98,6 @@ const initializeControlsSection = () => {
                 selectedFigure = null;
                 selectedColor = null;
             }
-            console.log({selectedFigure, selectedColor})
         })
         // appending color
         colorColumnSection.appendChild(button)
@@ -126,7 +125,6 @@ const initializeControlsSection = () => {
                     selectedFigure = null;
                     selectedColor = null;
                 }
-                console.log({selectedFigure, selectedColor})
             })
             // appending figure button
             figureButtonColumnSection.appendChild(button)
