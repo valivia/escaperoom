@@ -5,7 +5,7 @@ import { getButtonGoBack } from "../components/button.js";
 
 // create every component
 // header
-const header = getHeader('Maybe something is hidden here?', "Mysterious room")
+const header = getHeader('Starry night is my favourite painting!', "Mysterious room")
 
 // frame
 const frame = getFrame('assets/frames/vaultroom/room.svg');
@@ -41,6 +41,7 @@ const assignClickAbles = () => {
         // Painting
         const painting = svg.querySelector("#painting");
         painting.addEventListener("click", removePainting);
+        painting.style.transition = "transform 500ms ease-in-out"
 
         if (localStorage.getItem("paintingRemoved") === "true")
             painting.style.transform = "translate(100px, 100px) skew(-10deg, 10deg) scale(0.9)";
