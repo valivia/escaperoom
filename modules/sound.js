@@ -3,4 +3,11 @@ const playSound = (url) => {
     audio.play();
 }
 
-export default playSound;
+const playBackgroundMusic = (url) => {
+    const audio = new Audio(url);
+    audio.volume = 0.4
+    audio.loop = true
+    audio.play();
+}
+
+export {playSound, playBackgroundMusic};
