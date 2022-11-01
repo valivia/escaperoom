@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--secondary);
+    width: 100%;
+
+    gap: 20px;
+}
+
+.EndButton {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    padding: 10px;
+
+    border: 1px solid var(--font);
+    border-radius: 10px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    transform: scale(1);
+
+    transition: color 100ms ease-in-out;
+    transition: background-color 100ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+}
+
+.EndButton:hover {
+    background-color: var(--font);
+    color: var(--primary);
+    transform: scale(1.1);
+}
+.EndButton:active {
+    transform: scale(1);
+}

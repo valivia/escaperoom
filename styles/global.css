@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    color: var(--font_active);
+    color: var(--font);
     width: 100%;
 }
 
