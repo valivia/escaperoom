@@ -1,4 +1,5 @@
 import {checkParams} from "../modules/functionValidation.js";
+import {showPopup} from "./popup.js";
 
 let maxCount = parseInt(localStorage.getItem('time')) || 500;
 
@@ -50,11 +51,10 @@ const getTimer = (timeBlock) => {
 
 const checkTimer = () => {
     // when timer is zero
-    if (maxCount === 0){
+    if (maxCount <= 0){
         localStorage.removeItem('time')
-
-        // for the time being
-        maxCount = 500
+        showPopup('Time is up!', 'You failed your mission...', true);
+        setTimeout(() => location.href = '/', 2000);
     }
 }
 
