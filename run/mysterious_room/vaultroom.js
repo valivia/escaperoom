@@ -3,6 +3,8 @@ import { getFrame } from "../../components/frame.js";
 import { getInventory } from "../../components/inventory.js";
 import { getButtonGoBack } from "../../components/button.js";
 import { showPopup } from "../../components/popup.js";
+import { playBackgroundMusic, playSound } from "../../modules/sound.js";
+
 
 // create every component
 // header
@@ -21,6 +23,7 @@ const backButton = getButtonGoBack('Go back to the hallway', '/hallway.html')
 const removePainting = () => {
     const svg = document.querySelector("object").contentDocument;
     const painting = svg.getElementById("painting");
+    playSound("assets/audio/vault/canvas_move.mp3")
 
     if (localStorage.getItem("paintingRemoved") === "true") {
         painting.style.transform = "translate(0,0) skew(0,0) scale(1)";
@@ -55,6 +58,8 @@ const assignClickAbles = () => {
         // Vault
         const vault = svg.querySelector("#vault");
         vault.addEventListener("click", clickVault);
+
+        playBackgroundMusic("assets/audio/vault/room_ambience.mp3")
     });
 }
 

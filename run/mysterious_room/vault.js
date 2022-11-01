@@ -3,6 +3,7 @@ import { getFrame } from "../../components/frame.js";
 import { getInventory } from "../../components/inventory.js";
 import { getButtonGoBack } from "../../components/button.js";
 import { showPopup } from "../../components/popup.js";
+import { playBackgroundMusic, playSound } from "../../modules/sound.js";
 
 // create every component
 // header
@@ -37,6 +38,7 @@ const checkCombination = () => {
         solutions[currentSolution][2] !== getKnobDeg(knob3)
     ) {
         showPopup("Incorrect", "Hmmm it doesnt budge");
+        playSound("assets/audio/vault/vault_jammed.mp3")
         return;
     }
 
@@ -46,10 +48,12 @@ const checkCombination = () => {
 
     if (currentSolution < 2) {
         showPopup("Success!", `I can hear a part of the lock unlocking, ${2 - currentSolution} left...`)
+        playSound("assets/audio/vault/vault_move.mp3")
         currentSolution += 1;
         return
     }
 
+    playSound("assets/audio/vault/vault_open.mp3")
     showPopup("Objective completed!", "These are the secrets! now i need to quickly get out of here...")
     localStorage.setItem("key2", "aaa")
     hideButtons()
@@ -74,6 +78,8 @@ const onKnobClick = (id) => {
     const knob = svg.getElementById(id);
     const oldDeg = getKnobDeg(knob);
     knob.style.transform = rotation((oldDeg + 120) % 360);
+
+    playSound("assets/audio/vault/knob_move.mp3")
 }
 
 const configureKnob = (id, deg) => {
@@ -110,6 +116,7 @@ const assignClickAbles = () => {
         confirmButton.style.cursor = 'pointer'
         confirmButton.addEventListener("click", () => checkCombination())
 
+        playBackgroundMusic("assets/audio/vault/vault_ambience.mp3")
     });
 }
 
