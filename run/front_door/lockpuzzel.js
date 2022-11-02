@@ -55,6 +55,7 @@ function rotateRight(){
 function checkPos(){
     if(currentPos == 9){
         playSound('assets/audio/lock/openDoor.wav');
+        showPopup("Goodjob, you got in", " ");
         setTimeout(() => location.href = 'hallway.html', 4000);
     }
     else{
