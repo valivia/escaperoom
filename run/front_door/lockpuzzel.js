@@ -1,6 +1,8 @@
 import {getHeader, updateStatusHeader} from "../../components/header.js";
 import {getFrame} from "../../components/frame.js";
 import {getButtonGoBack} from "../../components/button.js";
+import {showPopup} from "../../components/popup.js";
+import {playSound} from "../../modules/sound.js";
 
 //header
 const header = getHeader('You need to move the pin to the correct position', 'Time to break in...');
@@ -9,45 +11,63 @@ const frame = getFrame('assets/frames/intro/spel1.svg');
 //backbutton
 const backButton = getButtonGoBack('back to the house...', 'frontdoor.html');
 
+const rotation = (x) => `rotate(${x}deg)`
+
+let currentDeg = 0;
+let currentPos = 7;
+
 //Clickables
 const assignClickAbles = () =>{
     document.querySelector("object").addEventListener("load", () =>{
         const svg = document.querySelector("object").contentDocument.getElementsByTagName('svg')[0]
         svg.style.width = '100%'
         svg.style.height = '100%'
-            svg.querySelector('#lockbutton').addEventListener("click", () => alert("check lockpos"))
-            svg.querySelector('#lockpick').addEventListener("click", () => alert("move pick"))
+            svg.querySelector('#lockbutton').style.cursor = 'pointer';
+            svg.querySelector('#arrowleft').style.cursor = 'pointer';
+            svg.querySelector('#arrowright').style.cursor = 'pointer';
+            svg.querySelector('#lockbutton').addEventListener("click", () => checkPos())
+            svg.querySelector('#arrowleft').addEventListener("click", () => rotateLeft())
+            svg.querySelector('#arrowright').addEventListener("click", () => rotateRight())
     });
 }
 
-/*function makeDraggable(evt){
-    var svg = evt.target;
-    svg.addEventListener('mousedown', startDrag);
-    svg.addEventListener('mousemove', drag);
-    svg.addEventListener('mouseup', endDrag);
-    svg.addEventListener('mouseleave', endDrag);
-
-    var selectedElement = false;
-
-
-    function startDrag(evt){
-        if(evt.target.classList.contains('draggable')){
-            selectedElement = evt.target;
-        }
+function rotateLeft(){
+    if (currentPos>0){
+        playSound('assets/audio/lock/turnLockPick.wav');
+        currentDeg = currentDeg-25;
+        currentPos = currentPos-1;
+        rotated();
+        //alert(currentPos);
     }
 
-    function drag(evt){
-        if(selectedElement){
-            evt.preventDefault();
-            var x = parseFloat(selectedElement.getAttributeNs(null, 'x'));
-            selectedElement.setAttributeNS(null, 'x', x+0.1);
-        }
-    }
+}
 
-    function endDrag(evt){
-        selectedElement = null;
+function rotateRight(){
+    if (currentPos<10){
+        playSound('assets/audio/lock/turnLockPick.wav');
+        currentDeg = currentDeg+25;
+        currentPos = currentPos+1;
+        rotated();
+        //alert(currentPos);
     }
-}*/
+}
+
+function checkPos(){
+    if(currentPos == 9){
+        playSound('assets/audio/lock/openDoor.wav');
+        showPopup("Goodjob, you got in", " ");
+        setTimeout(() => location.href = 'hallway.html', 4000);
+    }
+    else{
+        showPopup("The lockpick is not in the correct position", "try again");
+    }
+}
+
+function rotated(){
+    const lockpick = document.querySelector("object").contentDocument.getElementById("lockpick");
+    lockpick.style.transformOrigin = "center";
+    lockpick.style.transform = rotation(currentDeg);
+}
 
 
 const wrapper = document.querySelector('.wrapper');
