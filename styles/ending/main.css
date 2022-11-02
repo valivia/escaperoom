@@ -6,6 +6,7 @@
 
     background-color: var(--secondary);
     width: 100%;
+    text-align: center;
 
     gap: 20px;
 }

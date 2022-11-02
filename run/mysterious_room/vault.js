@@ -56,6 +56,7 @@ const checkCombination = () => {
     playSound("assets/audio/vault/vault_open.mp3")
     showPopup("Objective completed!", "These are the secrets! now i need to quickly get out of here...")
     localStorage.setItem("key2", "aaa")
+    setTimeout(() => location.reload(), 2000)
     hideButtons()
 }
 

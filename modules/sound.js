@@ -5,7 +5,7 @@ const playSound = (url) => {
 
 const playBackgroundMusic = (url) => {
     const audio = new Audio(url);
-    audio.volume = 0.4
+    audio.volume = 0.6
     audio.loop = true
     audio.play();
 }
