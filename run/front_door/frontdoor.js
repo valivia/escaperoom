@@ -18,7 +18,7 @@ const assignClickAbles = () =>{
         svg.style.width = '100%'
         svg.style.height = '100%'
         svg.querySelector('#slot').style.cursor = 'pointer'
-            svg.querySelector('#slot').addEventListener("click", () => {window.location.href = 'hallway.html'
+            svg.querySelector('#slot').addEventListener("click", () => {window.location.href = 'lockpuzzel.html'
         })
     });
 }
