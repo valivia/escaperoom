@@ -66,6 +66,7 @@ function checkPos(){
 function rotated(){
     const lockpick = document.querySelector("object").contentDocument.getElementById("lockpick");
     lockpick.style.transformOrigin = "center";
+    lockpick.style.transformBox = "fill-box"
     lockpick.style.transform = rotation(currentDeg);
 }
 
