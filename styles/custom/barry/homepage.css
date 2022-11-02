@@ -5,7 +5,7 @@ body {
 .homepage-wrapper {
     margin: 1rem;
     width: 60vw;
-    background-image: url('../../../assets/frames/intro/homepage.png');
+    background-image: url('../../../assets/frames/intro/homepage.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
