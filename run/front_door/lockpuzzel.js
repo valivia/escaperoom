@@ -15,6 +15,7 @@ const rotation = (x) => `rotate(${x}deg)`
 
 let currentDeg = 0;
 let currentPos = 7;
+let PosAwnser = Math.floor(Math.random()*11);
 
 //Clickables
 const assignClickAbles = () =>{
@@ -36,6 +37,9 @@ function rotateLeft(){
         playSound('assets/audio/lock/turnLockPick.wav');
         currentDeg = currentDeg-25;
         currentPos = currentPos-1;
+        if(currentPos == PosAwnser){
+            playSound('assets/audio/lock/toCorrectPos.wav');
+        }
         rotated();
         //alert(currentPos);
     }
@@ -47,13 +51,16 @@ function rotateRight(){
         playSound('assets/audio/lock/turnLockPick.wav');
         currentDeg = currentDeg+25;
         currentPos = currentPos+1;
+        if(currentPos == PosAwnser){
+            playSound('assets/audio/lock/toCorrectPos.wav');
+        }
         rotated();
         //alert(currentPos);
     }
 }
 
 function checkPos(){
-    if(currentPos == 9){
+    if(currentPos == PosAwnser){
         playSound('assets/audio/lock/openDoor.wav');
         showPopup("Goodjob, you got in", " ");
         setTimeout(() => location.href = 'hallway.html', 2000);
